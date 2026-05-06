@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.tasks-list li {
+.tasks-list .task-item {
   display: flex;
   gap: 1rem;
 }
