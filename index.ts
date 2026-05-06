@@ -70,26 +70,29 @@ function addTask(e: SubmitEvent) {
 }
 
 function deleteTask(taskId: number) {
-  const tasksList = JSON.parse(localStorage.getItem("tasks") || "[]");
-  const filteredList = tasksList.filter(
+  const tasksList: taskType[] = JSON.parse(
+    localStorage.getItem("tasks") || "[]",
+  );
+  const filteredList: taskType[] = tasksList.filter(
     (taskItem: taskType) => taskItem.id !== taskId,
   );
-  const finalTasksList = JSON.stringify(filteredList);
+  const finalTasksList: string = JSON.stringify(filteredList);
   localStorage.setItem("tasks", finalTasksList);
 
   displayTasks();
 }
 
 function checkCompletedTask(taskId: number) {
-  console.log("change");
-  const tasksList = JSON.parse(localStorage.getItem("tasks") || "[]");
-  const modifiedList = tasksList.map((task: taskType) => {
+  const tasksList: taskType[] = JSON.parse(
+    localStorage.getItem("tasks") || "[]",
+  );
+  const modifiedList: taskType[] = tasksList.map((task: taskType) => {
     if (task.id === taskId) {
       task.completed = !task.completed;
     }
     return task;
   });
-  const finalTasksList = JSON.stringify(modifiedList);
+  const finalTasksList: string = JSON.stringify(modifiedList);
   localStorage.setItem("tasks", finalTasksList);
 }
 
