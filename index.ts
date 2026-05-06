@@ -1,5 +1,4 @@
 const form = document.querySelector("form");
-const addBtn = document.querySelector(".add-btn");
 const listContainer = document.querySelector(".tasks-list");
 
 interface taskType {
@@ -23,6 +22,8 @@ function createTaskItem(taskItem: taskType) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.checked = taskItem.completed;
+
+  checkbox.addEventListener("change", () => checkCompletedTask(taskItem.id));
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-btn");
@@ -77,6 +78,19 @@ function deleteTask(taskId: number) {
   localStorage.setItem("tasks", finalTasksList);
 
   displayTasks();
+}
+
+function checkCompletedTask(taskId: number) {
+  console.log("change");
+  const tasksList = JSON.parse(localStorage.getItem("tasks") || "[]");
+  const modifiedList = tasksList.map((task: taskType) => {
+    if (task.id === taskId) {
+      task.completed = !task.completed;
+    }
+    return task;
+  });
+  const finalTasksList = JSON.stringify(modifiedList);
+  localStorage.setItem("tasks", finalTasksList);
 }
 
 form?.addEventListener("submit", addTask);
