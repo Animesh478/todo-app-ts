@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>To-Do App</title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="task-container">
+          <label for="task">Task</label>
+          <input type="text" name="task" id="task" />
+        </div>
+        <div class="btn-container">
+          <button>Add</button>
+        </div>
+      </form>
+      <main>
+        <ul class="tasks-list">
+          <li class="task">
+            <p class="task-title">Buy milk</p>
+            <div class="cta">
+              <input type="checkbox" name="task-status" id="task-status" />
+              <button class="delete-btn">Delete</button>
+            </div>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>

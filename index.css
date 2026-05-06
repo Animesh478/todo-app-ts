@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks-list li {
+  display: flex;
+  gap: 1rem;
+}
