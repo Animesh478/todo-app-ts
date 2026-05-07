@@ -1,14 +1,87 @@
+html {
+  font-size: 62.5%;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
+.container {
+  width: 40%;
+  /*height: 100vh;
+  */
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.task-container {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.task-container input {
+  width: 50%;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.container main {
+  background-color: #f8f8f8;
+  width: 100%;
+  font-size: 2rem;
+}
+
 .tasks-list {
   display: flex;
   flex-direction: column;
+  padding: 2rem 5rem;
+  gap: 1.5rem;
+  width: 60%;
+  margin: 0 auto;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
 }
 
-.tasks-list .task-item {
+.cta {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.cta input {
+  cursor: pointer;
+}
+
+.delete-btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
